@@ -1,0 +1,52 @@
+body{
+  font-family: sans-serif;
+
+  background-color: white;
+
+  color: black;
+
+  overflow-x: hidden;
+}
+
+textarea {
+  resize: vertical;
+  width: 500px;
+  height: 350px;
+}
+
+#message {
+  width: 500px;
+  height: 350px;
+}
+
+a {
+  color: black;
+
+  text-decoration: none;
+
+  font-size: 20px;
+
+  margin-right: 10px;
+}
+
+a:hover {
+  color: black;
+
+  text-decoration: underline;
+
+  font-size: 20px;
+}
+
+p {
+  font-size: 16px;
+}
+
+#friends {
+  font-size: 16px;
+
+  text-align: center;
+}
+
+.message-date {
+  color: grey;
+}
