@@ -40,9 +40,17 @@ $db = new Database();
         if(isset($_GET['s'])) {
           $s = htmlspecialchars($_GET['s']);
 
-          include('pages/' . $p . '/' . $s . '.php');
+          if(file_exists('pages/' . $p . '/' . $s . '.php')) {
+            include('pages/' . $p . '/' . $s . '.php');
+          } else if(file_exists(('pages/' . $p . '/' . $s . '.html'))) {
+            include('pages/' . $p . '/' . $s . '.html');
+          }
         } else {
-          include('pages/' . $p . '/index.php');
+          if(file_exists('pages/' . $p . '/index.php')) {
+            include('pages/' . $p . '/index.php');
+          } else if(file_exists('pages/' . $p . '/index.html')) {
+            include('pages/' . $p . '/index.html');
+          }
         }
       } else {
         if(isset($_COOKIE['user_username']) && isset($_COOKIE['user_password'])) {
