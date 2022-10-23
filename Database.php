@@ -10,6 +10,12 @@ class Database {
   function query($sql) {
     return $this->conn->query($sql);
   }
+
+  function numRows($sql) {
+    $q = $this->query($sql);
+
+    return $q->num_rows;
+  }
 }
 
 ?>
