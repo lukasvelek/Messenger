@@ -4,7 +4,7 @@ $friend_id = $_GET['id']; // friend_id
 
 $user_id = $_COOKIE['user_id'];
 
-$sql = "SELECT `id` FROM `friends`
+$sql = "SELECT * FROM `friends`
         WHERE
           (`user1_id` LIKE '$user_id' AND `user2_id` LIKE '$friend_id')
         OR
@@ -12,7 +12,7 @@ $sql = "SELECT `id` FROM `friends`
 
 $result = $db->query($sql);
 
-$id = NULL;
+$id = "";
 
 foreach($result as $r) {
   $id = $r['id'];
@@ -20,7 +20,7 @@ foreach($result as $r) {
 
 if($id == "" || is_null($id)) {
   $sql = "INSERT INTO `friends` (`user1_id`, `user2_id`)
-          VALUES ('$user_id', '$id')";
+          VALUES ('$user_id', '$friend_id')";
 
   $result = $db->query($sql);
 
@@ -48,6 +48,6 @@ if($id == "" || is_null($id)) {
   $result = $db->query($sql);
 }
 
-header('Location: ?p=home');
+ header('Location: ?p=home');
 
 ?>
