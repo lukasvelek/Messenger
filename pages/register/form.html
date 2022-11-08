@@ -11,34 +11,49 @@
           alert('Zadané uživatelské jméno již existuje!');
           $('#registerbtn').attr('disabled', 'disabled');
         } else {
-          $('#registerbtn').removeAttr('disabled'); 
+          $('#registerbtn').removeAttr('disabled');
         }
       }
     });
   });
 </script>
-<div id="registerform">
-  <form action="?p=register&s=process" method="POST">
-    <label for="username">Celé jméno: </label>
+<div class="row">
+  <div class="col-md">
     <br>
-    <input type="text" name="fullname">
-    <br>
-    <br>
-
-    <label for="username">Uživatelské jméno: </label>
-    <br>
-    <input type="text" name="username" id="username">
-    <br>
-    <br>
-
-    <label for="password">Heslo: </label>
-    <br>
-    <input type="password" name="password">
-    <br>
-    <br>
-
-    <input type="submit" value="Registrovat se" id="registerbtn">
-  </form>
+  </div>
 </div>
 
-<a href="?p=login&s=form">Přihlásit se</a>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md">
+    <div id="register_form">
+      <h2 id="form_title">Registrace</h2>
+      <form action="?p=register&s=process" method="POST">
+        <label for="username">Celé jméno: </label>
+        <br>
+        <input type="text" name="fullname">
+        <br>
+        <br>
+
+        <label for="username">Uživatelské jméno: </label>
+        <br>
+        <input type="text" name="username" id="username">
+        <br>
+        <br>
+
+        <label for="password">Heslo: </label>
+        <br>
+        <input type="password" name="password">
+        <br>
+        <br>
+
+        <input type="submit" value="Registrovat se" id="registerbtn">
+      </form>
+
+      <br>
+
+      <a href="?p=login&s=form">Přihlásit se</a>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+</div>
