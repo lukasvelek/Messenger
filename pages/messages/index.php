@@ -89,7 +89,6 @@ $friend_id = $_GET['fid'];
         </form>
       </div>
       <div class="col-md">
-        <br>
         <a href="?p=friends&s=delete&fid=<?php echo($friend_id); ?>">Odebrat přítele</a>
         <br>
         <a href="?p=protected&s=delete-conversation-form&fid=<?php echo($friend_id); ?>">Odstranit konverzaci</a>
