@@ -6,10 +6,16 @@ $password = htmlspecialchars($_POST['password']);
 
 $password_hash = hash("sha512", $password);
 
-$sql = "INSERT INTO `users` (`username`, `fullname`, `password`)
-        VALUES ('$username', '$fullname', '$password_hash')";
+$sql_users = "SELECT `id` FROM `users` WHERE `username` LIKE '$username'";
 
-$result = $db->query($sql);
+if($db->numRows($sql) > 0) {
+  header('Location: ?p=register&s=form');
+}
+
+$sql_insert = "INSERT INTO `users` (`username`, `fullname`, `password`)
+               VALUES ('$username', '$fullname', '$password_hash')";
+
+$result = $db->query($sql_insert);
 
 if($result === TRUE) {
   header('Location: ?p=login&s=form');

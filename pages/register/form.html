@@ -1,3 +1,22 @@
+<script type="text/javascript">
+  $(document).on('focusout', '#username', function() {
+    let username = $('#username').val();
+
+    $.ajax({
+      type: "GET",
+      url: "api/get/get-register-existing-username.php?u=" + username,
+      dataType: "html",
+      success: function(data) {
+        if(data == "true") {
+          alert('Zadané uživatelské jméno již existuje!');
+          $('#registerbtn').attr('disabled', 'disabled');
+        } else {
+          $('#registerbtn').removeAttr('disabled'); 
+        }
+      }
+    });
+  });
+</script>
 <div id="registerform">
   <form action="?p=register&s=process" method="POST">
     <label for="username">Celé jméno: </label>
@@ -8,7 +27,7 @@
 
     <label for="username">Uživatelské jméno: </label>
     <br>
-    <input type="text" name="username">
+    <input type="text" name="username" id="username">
     <br>
     <br>
 
@@ -18,7 +37,7 @@
     <br>
     <br>
 
-    <input type="submit" value="Registrovat se">
+    <input type="submit" value="Registrovat se" id="registerbtn">
   </form>
 </div>
 
