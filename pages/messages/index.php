@@ -70,7 +70,7 @@ $friend_id = $_GET['fid'];
         $username = $u['username'];
         $fullname = $u['fullname'];
 
-        echo('<h2>' . $fullname . ' (' . $username . ')</h2>');
+        echo('<br><h2>' . $fullname . ' (' . $username . ')</h2>');
       }
     ?>
   </div>
