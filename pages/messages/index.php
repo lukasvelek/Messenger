@@ -76,6 +76,8 @@ $friend_id = $_GET['fid'];
   </div>
 </div>
 
+<hr>
+
 <div class="row">
   <div class="col-md">
     <div id="messages"></div>
@@ -89,8 +91,9 @@ $friend_id = $_GET['fid'];
         </form>
       </div>
       <div class="col-md">
+        <a href="?p=friends&s=stats&fid=<?php echo($friend_id); ?>">Statistiky přátelství</a>
+        <hr>
         <a href="?p=friends&s=delete&fid=<?php echo($friend_id); ?>">Odebrat přítele</a>
-        <br>
         <a href="?p=protected&s=delete-conversation-form&fid=<?php echo($friend_id); ?>">Odstranit konverzaci</a>
       </div>
     </div>
