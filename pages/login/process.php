@@ -10,6 +10,7 @@ $sql = "SELECT * FROM `users` WHERE `username` LIKE '$username' AND `password` L
 $users = $db->query($sql);
 
 foreach($users as $u) {
+  setcookie('user_fullname', $u['fullname']);
   setcookie('user_username', $username);
   setcookie('user_password', $password);
   setcookie('user_id', $u['id']);

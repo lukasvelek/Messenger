@@ -1,5 +1,47 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    console.log('ahoj');
+    $.ajax({
+      type: "GET",
+      url: "api/get/get-status.php",
+      dataType: "html",
+      success: function(data) {
+        $('#status_list').append(data);
+      }
+    });
+  });
+
+  $(document).on('click', '#status_send', function() {
+    var vstatus = $('#status_form_textarea').val();
+
+    if(vstatus == "") {
+      alert("Prosíjm napište status před odesláním!");
+    } else {
+      $.post('api/post/post-status.php', {
+        status: vstatus
+      }, function() {
+        document.getElementById('status_form_textarea').value = "";
+
+        //window.reload();
+      });
+    }
+  });
+</script>
+
 <div class="row">
-  <div class="col-md">
-    
+  <div class="col-md-2"></div>
+  <div class="col-md" id="status">
+    <div id="status_form">
+      <h2 id="form_title">Přidat příspěvek</h2>
+      <textarea id="status_form_textarea"></textarea>
+      <br>
+      <button id="status_send">Přidat</button>
+    </div>
+
+    <hr>
+
+    <div id="status_list">
+    </div>
   </div>
+  <div class="col-md-5"></div>
 </div>

@@ -17,6 +17,8 @@ $sql_insert = "INSERT INTO `users` (`username`, `fullname`, `password`)
 
 $result = $db->query($sql_insert);
 
+mkdir('user-content/' . $username);
+
 if($result === TRUE) {
   header('Location: ?p=login&s=form');
 }

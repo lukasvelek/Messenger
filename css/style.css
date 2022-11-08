@@ -1,11 +1,12 @@
 body{
   font-family: sans-serif;
 
-  background-color: white;
+  background-color: rgb(245, 245, 255);
 
   color: black;
 
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 textarea {
@@ -16,7 +17,7 @@ textarea {
 
 #message {
   width: 500px;
-  height: 350px;
+  height: 250px;
 }
 
 a {
@@ -49,4 +50,39 @@ p {
 
 .message-date {
   color: grey;
+}
+
+#register_form, #login_form {
+  text-align: center;
+}
+
+#register_form input[type=text], #register_form input[type=password],
+#register_form input[type=submit], #login_form input[type=text],
+#login_form input[type=password], #login_form input[type=submit] {
+  width: 75%;
+
+  font-size: 20px;
+}
+
+#register_form label, #login_form label {
+  font-size: 20px;
+}
+
+#form_title {
+  font-size: 32px;
+}
+
+#status_form_textarea {
+  resize: vertical;
+  width: 100%;
+  height: 15em;
+}
+
+#status_send {
+  width: 100%;
+}
+
+#messages {
+  overflow: auto;
+  max-height: 59vh;
 }

@@ -11,7 +11,11 @@
   });
 </script>
 
-<div class="col-md-2" id="friends">
+<div class="col-md-3" id="friends">
+  <br>
+  <a href="?p=user&s=profile">Můj profil</a>
+  <a href="?p=home">Příspěvky</a>
+  <a href="?p=logout">Odhlásit se</a>
   <hr>
   <a href="?p=friends&s=addform">Přidat uživatele</a>
   <hr>

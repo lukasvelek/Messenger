@@ -36,11 +36,11 @@ if($db->numRows($sql) == 0) {
       if($friend_picture == "" || is_null($friend_picture)) {
         $picture_location = "user-content/default/default.png";
       } else {
-        $picture_location = "user-content/" . $friend_id . '/' . $friend_picture;
+        $picture_location = "user-content/" . $friend_name . '/' . $friend_picture;
       }
 
       echo('<a href="?p=messages&fid=' . $friend_id . '">
-              <img src="' . $picture_location . '">
+              <img src="' . $picture_location . '" width="64" height="64">
               ' . $friend_fullname . ' (' . $friend_name . ')
             </a>
             <hr>');
