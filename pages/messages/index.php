@@ -78,18 +78,22 @@ $friend_id = $_GET['fid'];
 
 <div class="row">
   <div class="col-md">
-    <form id="send_message" action="?p=messages&fid=<?php echo($friend_id); ?>" method="post">
-      <textarea id="message" maxlength="255" placeholder="Zde napište zprávu dlouho maximálně 255 znaků..." autofocus required></textarea>
-      <input type="button" value="Odeslat" id="send">
-    </form>
-
-    <br>
-    <a href="?p=friends&s=delete&fid=<?php echo($friend_id); ?>">Odebrat přítele</a>
-    <br>
-    <a href="?p=protected&s=delete-conversation-form&fid=<?php echo($friend_id); ?>">Odstranit konverzaci</a>
-  </div>
-  <div class="col-md-8">
-    <div id="messages">
+    <div id="messages"></div>
+    <hr>
+    <div class="row">
+      <div class="col-md">
+        <form id="send_message" action="?p=messages&fid=<?php echo($friend_id); ?>" method="post">
+          <textarea id="message" maxlength="255" placeholder="Zde napište zprávu dlouho maximálně 255 znaků..." autofocus required></textarea>
+          <br>
+          <input type="button" value="Odeslat" id="send">
+        </form>
+      </div>
+      <div class="col-md">
+        <br>
+        <a href="?p=friends&s=delete&fid=<?php echo($friend_id); ?>">Odebrat přítele</a>
+        <br>
+        <a href="?p=protected&s=delete-conversation-form&fid=<?php echo($friend_id); ?>">Odstranit konverzaci</a>
+      </div>
     </div>
   </div>
 </div>
